@@ -1,0 +1,266 @@
+
+wygeneruj jakiś krótki prompt dla chatgpt w którym bedzie polecenie by ai stworzyło gre html javascript css, gra ma być typu logicznego, będa w nią grali uczniowie technikum. Byłoby dobrze gdyby te gry generowane przez uczniów były różnorodne.
+Oto krótki prompt, który powinien sprawić, że uczniowie otrzymają różnorodne gry logiczne, zamiast wszyscy generować podobne projekty.
+
+Stwórz kompletną grę logiczną dla uczniów technikum (15–19 lat), wykorzystując HTML, CSS i JavaScript.
+
+Samodzielnie wymyśl oryginalną mechanikę gry, która będzie wymagała logicznego myślenia, planowania, dedukcji lub rozwiązywania zagadek. Unikaj typowych gier, takich jak kółko i krzyżyk czy memory. Zadbaj o atrakcyjny, nowoczesny wygląd, animacje, punktację i rosnący poziom trudności.
+
+Gra powinna być wciągająca, mieć jasne zasady i działać w przeglądarce bez instalowania dodatkowych bibliotek.
+
+Wygeneruj kompletny kod w jednym pliku index.html, gotowym do uruchomienia.
+
+Jak uzyskać jeszcze większą różnorodność?
+
+Możesz dopisać na końcu promptu takie zdanie:
+
+„Wykorzystaj jako inspirację dwie losowo wybrane liczby od 1 do 100 i na ich podstawie wymyśl nietypową mechanikę gry. Nie pokazuj tych liczb graczowi”.
+
+Nie zagwarantuje to unikalności każdej gry, ale powinno dodatkowo zwiększyć różnorodność wyników.
+
+Możesz też polecić uczniom, aby po wygenerowaniu gry wprowadzili do niej przynajmniej trzy własne modyfikacje za pomocą kolejnych promptów. W ten sposób zadanie sprawdzi nie tylko generowanie kodu, ale również umiejętność rozwijania projektu z pomocą AI.
+
+stwórz teraz prompt do gry typu quiz, w której są pytania z HTML i podstaw css. ten program quizu miałby losować 10 pytań z bazy 25 pytań. miałby też wstawiać oceny na podstawie ilosci prawidłowych odpowiedzi, 5-2,6-3,7i8-4,9-5,10-6
+prompt będzie wykonywany na kontach ktore nie maja premium, wiec pomyśl w prompcie nad komendami które zmniejszą tokenożerność.
+Przygotowałem prompt zoptymalizowany pod darmowe konta ChatGPT. Ogranicza długość odpowiedzi, ale zachowuje wszystkie wymagania dotyczące quizu. Dodatkowo wymusza generowanie od razu kodu, bez zbędnych wyjaśnień.
+
+Stwórz interaktywny quiz sprawdzający wiedzę z HTML i podstaw CSS dla uczniów technikum.
+
+Wymagania:
+
+Baza 25 pytań: 15 z HTML i 10 z CSS.
+
+W każdej rozgrywce losuj 10 różnych pytań z bazy.
+
+Każde pytanie ma 4 odpowiedzi (A, B, C, D), tylko jedną poprawną.
+
+Wyświetlaj pytania pojedynczo, z numerem aktualnego pytania.
+
+Po zaznaczeniu odpowiedzi przechodź do kolejnego pytania.
+
+Na końcu pokaż liczbę poprawnych odpowiedzi i ocenę według skali:
+
+0–4 pkt → 1
+
+5 pkt → 2
+
+6 pkt → 3
+
+7–8 pkt → 4
+
+9 pkt → 5
+
+10 pkt → 6
+
+Dodaj przycisk „Zagraj ponownie”, który losuje nowy zestaw pytań.
+
+Zadbaj o nowoczesny, estetyczny wygląd i responsywność.
+
+Wymagania techniczne:
+
+Wykorzystaj wyłącznie HTML, CSS i JavaScript.
+
+Całość umieść w jednym pliku index.html.
+
+Pytania przechowuj w tablicy JavaScript.
+
+Quiz musi działać offline.
+
+Oszczędzanie tokenów:
+
+Zwróć WYŁĄCZNIE gotowy kod, bez wstępu, komentarzy i objaśnień.
+
+Stosuj zwięzły kod i krótkie treści pytań.
+
+Nie używaj bibliotek, frameworków ani zewnętrznych zasobów.
+
+Nie pomijaj żadnej wymaganej funkcjonalności.
+
+Dodatkowa uwaga: Celowo nie wymagam rozbudowanych animacji, dźwięków, liczników czasu ani szczegółowych wyjaśnień odpowiedzi. To zwiększyłoby ilość generowanego kodu, a tym samym zużycie tokenów.
+
+Warto też pozostawić pytania do samodzielnego wygenerowania przez AI. Dzięki temu poszczególni uczniowie mogą uzyskać nieco inne zestawy pytań, mimo użycia identycznego promptu.
+
+Stwórz interaktywny quiz sprawdzający wiedzę z HTML i podstaw CSS dla uczniów technikum.
+
+Wymagania:
+
+Baza 25 pytań: 15 z HTML i 10 z CSS.
+W każdej rozgrywce losuj 10 różnych pytań z bazy.
+Każde pytanie ma 4 odpowiedzi (A, B, C, D), tylko jedną poprawną.
+Wyświetlaj pytania pojedynczo, z numerem aktualnego pytania.
+Po zaznaczeniu odpowiedzi przechodź do kolejnego pytania.
+Na końcu pokaż liczbę poprawnych odpowiedzi i ocenę według skali:
+0–4 pkt → 1
+5 pkt → 2
+6 pkt → 3
+7–8 pkt → 4
+9 pkt → 5
+10 pkt → 6
+Dodaj przycisk „Zagraj ponownie”, który losuje nowy zestaw pytań.
+Zadbaj o nowoczesny, estetyczny wygląd i responsywność.
+Wymagania techniczne:
+
+Wykorzystaj wyłącznie HTML, CSS i JavaScript.
+Całość umieść w jednym pliku index.html.
+Pytania przechowuj w tablicy JavaScript.
+Quiz musi działać offline.
+Oszczędzanie tokenów:
+
+Zwróć WYŁĄCZNIE gotowy kod, bez wstępu, komentarzy i objaśnień.
+Stosuj zwięzły kod i krótkie treści pytań.
+Nie używaj bibliotek, frameworków ani zewnętrznych zasobów.
+Nie pomijaj żadnej wymaganej funkcjonalności.
+…
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz HTML i CSS</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#0f172a,#312e81);font-family:Arial,sans-serif;color:#f8fafc;padding:20px}
+.quiz{width:100%;max-width:650px;background:#1e293b;padding:32px;border-radius:22px;box-shadow:0 20px 60px #0005}
+h1{margin:0 0 10px;color:#a5b4fc}
+.top{display:flex;justify-content:space-between;color:#cbd5e1;font-size:14px}
+.progress{height:9px;background:#334155;border-radius:10px;margin:22px 0;overflow:hidden}
+#bar{height:100%;background:#818cf8;width:0;transition:width .3s}
+h2{font-size:23px;line-height:1.4;margin:25px 0}
+.answers{display:grid;gap:12px}
+.answers button{width:100%;text-align:left;padding:17px;border:1px solid #475569;background:#334155;color:white;border-radius:12px;cursor:pointer;font-size:16px;transition:.2s}
+.answers button:hover:not(:disabled){background:#4338ca;border-color:#a5b4fc;transform:translateY(-2px)}
+.answers button:disabled{cursor:default}
+.answers button.correct{background:#166534;border-color:#4ade80}
+.answers button.wrong{background:#991b1b;border-color:#f87171}
+#result{text-align:center}
+.grade{font-size:80px;font-weight:bold;color:#a5b4fc;margin:15px}
+.restart{background:#6366f1;color:white;border:0;border-radius:12px;padding:15px 30px;font-size:17px;cursor:pointer;margin-top:20px}
+.restart:hover{background:#4f46e5}
+.hidden{display:none}
+code{color:#c4b5fd}
+@media(max-width:500px){.quiz{padding:22px}h2{font-size:19px}.answers button{font-size:14px}}
+</style>
+</head>
+<body>
+<main class="quiz">
+<section id="game">
+<h1>Quiz HTML & CSS</h1>
+<div class="top">
+<span id="counter"></span>
+<span id="score"></span>
+</div>
+<div class="progress"><div id="bar"></div></div>
+<h2 id="question"></h2>
+<div id="answers" class="answers"></div>
+</section>
+<section id="result" class="hidden" aria-live="polite">
+<h1>Koniec quizu!</h1>
+<p>Twój wynik:</p>
+<h2 id="finalScore"></h2>
+<p>Twoja ocena:</p>
+<div class="grade" id="grade"></div>
+<p id="message"></p>
+<button class="restart" onclick="start()">Zagraj ponownie ↻</button>
+</section>
+</main>
+
+<script>
+const questions=[
+["Który znacznik tworzy akapit?",["<p>","<h1>","<div>","<span>"],0],
+["Jak wstawić obraz na stronę?",["<image>","<img>","<picture-only>","<src>"],1],
+["Który znacznik tworzy link?",["<link>","<url>","<a>","<href>"],2],
+["Który atrybut wskazuje adres linku?",["src","alt","id","href"],3],
+["Który znacznik tworzy listę numerowaną?",["<ol>","<ul>","<li>","<dl>"],0],
+["Który znacznik tworzy element listy?",["<ul>","<li>","<list>","<ol>"],1],
+["Który znacznik tworzy nagłówek najwyższego poziomu?",["<head>","<h6>","<h1>","<header>"],2],
+["Który element zawiera widoczną treść strony?",["<head>","<title>","<meta>","<body>"],3],
+["Który znacznik tworzy tabelę?",["<table>","<tab>","<grid>","<td>"],0],
+["Który znacznik tworzy wiersz tabeli?",["<td>","<tr>","<th>","<row>"],1],
+["Który atrybut opisuje obraz?",["title","href","alt","value"],2],
+["Który typ pola input służy do wpisywania hasła?",["text","hidden","email","password"],3],
+["Który znacznik tworzy przycisk?",["<button>","<click>","<inputbox>","<press>"],0],
+["Który znacznik wstawia nową linię?",["<hr>","<br>","<p>","<nl>"],1],
+["Który znacznik zawiera tytuł karty przeglądarki?",["<header>","<h1>","<title>","<caption>"],2],
+["Która właściwość CSS zmienia kolor tekstu?",["background","font-color","text-color","color"],3],
+["Która właściwość CSS zmienia kolor tła?",["background-color","color","font-color","border-color"],0],
+["Jak ustawić rozmiar czcionki?",["text-size","font-size","size","font-style"],1],
+["Która właściwość ustawia margines wewnętrzny?",["margin","border","padding","spacing"],2],
+["Która właściwość ustawia margines zewnętrzny?",["padding","gap","border","margin"],3],
+["Jak wyśrodkować tekst w poziomie?",["text-align:center","align:center","font-align:center","justify:center"],0],
+["Jak zaznaczyć klasę CSS o nazwie box?",["#box",".box","box","*box"],1],
+["Jak zaznaczyć identyfikator CSS o nazwie menu?",[".menu","menu","#menu","@menu"],2],
+["Która właściwość zaokrągla narożniki?",["border-width","border-style","outline","border-radius"],3],
+["Jak ustawić element jako kontener Flexbox?",["display:flex","position:flex","flex:true","layout:flex"],0]
+];
+
+let selected=[],index=0,points=0,locked=false;
+const el=id=>document.getElementById(id);
+
+function start(){
+selected=[...questions].sort(()=>Math.random()-.5).slice(0,10);
+index=0;points=0;locked=false;
+el("game").classList.remove("hidden");
+el("result").classList.add("hidden");
+show();
+}
+
+function show(){
+locked=false;
+const [q,opts]=selected[index];
+el("counter").textContent=`Pytanie ${index+1} z 10`;
+el("score").textContent=`Punkty: ${points}`;
+el("bar").style.width=`${index*10}%`;
+el("question").textContent=q;
+el("answers").innerHTML="";
+
+const order=[0,1,2,3].sort(()=>Math.random()-.5);
+order.forEach((original,i)=>{
+const btn=document.createElement("button");
+btn.textContent=String.fromCharCode(65+i)+". "+opts[original];
+btn.onclick=()=>answer(original,btn);
+el("answers").appendChild(btn);
+});
+}
+
+function answer(choice,btn){
+if(locked)return;
+locked=true;
+const correct=selected[index][2];
+if(choice===correct){points++;btn.classList.add("correct")}
+else{
+btn.classList.add("wrong");
+[...el("answers").children].forEach(b=>{
+if(b.textContent.slice(3)===selected[index][1][correct])b.classList.add("correct");
+});
+}
+el("score").textContent=`Punkty: ${points}`;
+[...el("answers").children].forEach(b=>b.disabled=true);
+setTimeout(()=>{
+index++;
+if(index<10)show();
+else finish();
+},850);
+}
+
+function finish(){
+el("game").classList.add("hidden");
+el("result").classList.remove("hidden");
+let grade=points<=4?1:points===5?2:points===6?3:points<=8?4:points===9?5:6;
+el("finalScore").textContent=`${points} / 10 punktów`;
+el("grade").textContent=grade;
+el("message").textContent=grade===6?"Perfekcyjnie! Znasz HTML i CSS! 🎉":
+grade>=4?"Dobra robota! Tak trzymaj! 👏":
+grade>=2?"Nieźle! Warto jeszcze poćwiczyć. 💪":
+"Powtórz podstawy i spróbuj ponownie. 📚";
+}
+
+start();
+</script>
+</body>
+</html>
+
+
+
+
+⋮⋮⋮⋮⋮⋮⋮⋮
